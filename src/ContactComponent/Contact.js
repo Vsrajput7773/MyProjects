@@ -1,26 +1,28 @@
 import './Contact.css';
- 
+
 function Contact()
 {
- return(
-        <div>
-     <div class="about">
-         <div class="container ">
-            <div class="row d_flex">
-               <div class="col-md-5">
-                  <div class="titlepage">
-                     <h2>contact page</h2>
-                     <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco</span>
-                     <a class="read_more" href="Javascript:void(0)"> Read More</a>
-                  </div>
-               </div>
-               <div class="col-md-7">
-                  <div class="about_img">
-                  </div>
-               </div>
-            </div>
-         </div>
-         <div class="col-md-6" id="bg">
+    return(
+
+            <div class="container ">
+                  <div class="row">
+                     <div class="col-md-6">  
+                       <h1>Contact Page</h1>
+                       <img src='assets/images/contact.jpg'/>
+                          {/*<p>Officiis fugiat modi error rerum, 
+                             ex perferendis provident laboriosam ea minima numquam eveniet delectus impedit nemo assumenda. Blanditiis, velit similique? Itaque vel
+                             repudiandae consectetur illum veniam incidunt sed assumenda est nulla dolore magni, reiciendis magnam ullam, libero culpa dicta architecto
+                             nemo possimus pariatur quasi harum minima maxime omnis. Nulla commodi molestias cupiditate accusamus voluptates hic suscipit similique labore delectus,
+                             tempore alias dolorum eius maiores laborum ea, atque libero corrupti rerum dignissimos id velit doloremque ipsum exercitationem!
+                             Perspiciatis illo, quisquam iure culpa quibusdam voluptatibus atque eveniet molestiae sit consectetur nesciunt provident tempora 
+                            aspernatur harum odio adipisci officiis veniam minima. Eveniet quod fugiat sequi quo ducimus eaque amet explicabo neque deserunt a
+                             officia dignissimos temporibus soluta placeat maxime, ipsam, non laborum, modi veritatis! Voluptates hic odit mollitia alias, accusamus
+                              itaque odio maxime illum rem et eius laborum sint aliquid neque assumenda officia ipsam ipsum voluptatibus dolorem animi ut! 
+    </p>*/}
+    <br/>
+                        </div>
+
+                        <div class="col-md-6" id="bg">
 
                         <center>
                           <h1>Contact us</h1>
@@ -49,12 +51,9 @@ function Contact()
                         </center>
                           <br/><br/>
                           </div>
-      </div>
-    
-    {/* content end */}
-
-
-        </div>
+                  </div>
+            </div> 
     );
 }
+
 export default Contact;

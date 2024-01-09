@@ -1,75 +1,70 @@
 import './Manageusers.css';
-import { useState ,useEffect} from 'react';
+import { useState , useEffect } from 'react';
 import axios from 'axios';
-import {_userapiurl } from '../ApiUrl';
+import { _userapiurl } from '../ApiUrl';
 
-function Manageusers() 
+function Manageusers()
 {
-
-      const [userDetails , setUserDetails ] =useState([]);
-      useEffect(()=>{
-         axios.get(_userapiurl+"fetch?role=user").then((response)=>{
-            // const responseData=response.data;
-            // console.log(responseData);
+    const [ userDetails , setUserDetails ] = useState([]);
+    useEffect(()=>{
+        axios.get(_userapiurl+"fetch?role=user").then((response)=>{
+           // const responseData=response.data;
+            //console.log(responseData);
             setUserDetails(response.data);
-
-         }).catch((err)=>{
+        }).catch((err)=>{
             console.log(err);
-         });
-      },[]);
+        });
+    },[]);
 
-const ManageUserStatus=(_id,s)=>{
-   // alert(_id+"-------"+s);
-   if(s=="verify")
-   {
-      axios.patch(_userapiurl+"update",{"_id":_id,"status":1}).then((result)=>{
-         window.location.reload();
-         
-      })
-   }
-   else if(s=="block")
-   {
-      axios.patch(_userapiurl+"update",{"_id":_id,"status":0}).then((result)=>{
-         window.location.reload();
+    const manageUserStatus=(_id,s)=>{
+        //alert(_id+"----"+s);
+        var updateDetails;
+        if(s=="verify")
+        {
+        updateDetails={"condition":{"_id":_id},"set":{"status":1}};
+         axios.patch(_userapiurl+"update",updateDetails).then((result)=>{
+            window.location.reload();
+         })
+        }
+        else if(s=="block")
+        {
+        updateDetails={"condition":{"_id":_id},"set":{"status":0}};
+         axios.patch(_userapiurl+"update",updateDetails).then((result)=>{
+            window.location.reload();
+         })
+        }
+        else
+        {
+         axios.delete(_userapiurl+"delete/"+_id).then((result)=>{
+            window.location.reload();
+         })
+        }
+    }
 
-      })
-   }
-   else
-   {
-      axios.delete(_userapiurl+"delete/"+_id).then((result)=>{
-         window.location.reload();
-      })
-   }
-} 
-
-   return (
-      <div>
-         {/* about */}
-         <div class="about">
-            <div class="container ">
-               <div class="row d_flex">
-                  <div class="col-md-12">
-                     <div class="titlepage">
-                        <center>                       
-                            <h1 style={{fontSize:"40px",fontWeight:"bold"}}>view & Manage user Details</h1>
-                           <table class="table table-bordered">
-                              <tr>
-                                 <th>UserID</th>
-                                 <th>Name</th>
-                                 <th>Email</th>
-                                 <th>Password</th>
-                                 <th>Mobile</th>
-                                 <th>Address</th>
-                                 <th>City</th>
-                                 <th>Gender</th>
-                                 <th>Info</th>
-                                 <th>Status</th>
-                                 <th>Action</th>
-
-                              </tr>
+    return(
+        <div class="Manageuser_section layout" >
+           <div class="container" >
+            <div class="row" >
+                <div class="col-lg-12" >
+<center>
+<h1 style={{fontSize:'36px',fontWeight:'bold',}} >View & Manage User Details.</h1>
+<table class="table table-bordered" >
+<tr>
+<th>UserID</th>
+<th>Name</th>
+<th>Email</th>
+<th>Password</th>
+<th>Mobile</th>
+<th>Address</th>
+<th>City</th>
+<th>Gender</th>
+<th>Info</th> 
+<th>Status</th>
+<th>Action</th>
+</tr>
 {
-      userDetails.map((row)=>(
-         <tr>
+    userDetails.map((row)=>(
+        <tr>
             <td>{row._id}</td>
             <td>{row.name}</td>
             <td>{row.email}</td>
@@ -79,29 +74,26 @@ const ManageUserStatus=(_id,s)=>{
             <td>{row.city}</td>
             <td>{row.gender}</td>
             <td>{row.info}</td>
-            
             <td>
-               { row.status == 0 &&  
-               <a style={{"color":"green"}} onClick={()=>{ManageUserStatus(row._id,"verify")}}>verify user</a>
-               }
-               {row.status == 1 &&
-               <a style={{"color":"orange"}} onClick={()=>{ManageUserStatus(row._id,"block")}}>Block user</a>
-               }
-            </td>
-            <td><a style={{"color":"red"}} onClick={()=>{ManageUserStatus(row._id,"delete")}}>Delete user</a></td>
-
-         </tr>
-      ))
+            {row.status == 0 &&
+                <a style={{"color":"green"}} onClick={()=>{manageUserStatus(row._id,"verify")}} >Verify User</a>
+            }
+            {row.status == 1 &&
+                <a style={{"color":"orange"}} onClick={()=>{manageUserStatus(row._id,"block")}} >Block User</a>
+            }
+          </td>
+            <td><a style={{"color":"red"}} onClick={()=>{manageUserStatus(row._id,"delete")}} >Delete User</a></td>
+        </tr>
+    ))
 }
- </table>
- </center>
-                     </div>
-                  </div>
-               </div>
+</table>
+</center>
+                </div>
             </div>
-         </div>
-         {/* end about */}
-      </div>
-   );
+           </div>
+        </div>
+    );
+
 }
+
 export default Manageusers;

@@ -1,10 +1,8 @@
+/*--------------------skeleton----------------------------*/
 
+/**-- heading section --**/
 * {
   box-sizing: border-box !important;
-}
-
-.container {
-  max-width: 1170px;
 }
 
 html {
@@ -14,7 +12,7 @@ html {
 body {
   color: #666666;
   font-size: 14px;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Poppins', sans-serif;
   line-height: 1.80857;
   font-weight: normal;
 }
@@ -48,17 +46,14 @@ h6 {
 
 h1 {
   font-size: 24px;
-  font-family: 'Poppins', sans-serif;
 }
 
 h2 {
-  font-family: 'Poppins', sans-serif;
-  font-size: 22px;
+  font-size: 18px;
 }
 
 h3 {
   font-size: 18px;
-  font-family: 'Poppins', sans-serif;
 }
 
 h4 {
@@ -189,16 +184,3 @@ button {
   margin: 0;
   padding: 0;
 }
-
-.text_align_center {
-  text-align: center;
-}
-
-.text_align_left {
-  text-align: left;
-}
-
-.text_align_right {
-  text-align: right;
-}
-

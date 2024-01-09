@@ -1,22 +1,17 @@
 import './Userhome.css';
+import { useState } from 'react';
 
 function Userhome()
 {
     return(
- <div class="plane">
- {/* our plane */}
-
- <div class="container">
-    <div class="row">
-       <div class="col-sm-12">
-          <div class="titlepage">
-             <h2>Welcome to  uesr panel</h2>
-             <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod t dolor in reprehenderit in voluptate </span>
+      <div class="container" >
+        <div class="row" >
+          <div class="col-lg-12" >
+            <h1>Welcome to Postkarde.com , User panel</h1>
+              <p> officia dignissimos temporibus soluta placeat maxime, ipsam, non laborum, modi veritatis! Voluptates hic odit mollitia alias, accusamus itaque odio maxime illum rem et eius laborum sint aliquid neque assumenda officia ipsam ipsum voluptatibus dolorem animi ut!</p>
           </div>
-       </div>
-</div>
-</div>
-</div>
+        </div>
+      </div>
     );
 }
 export default Userhome;

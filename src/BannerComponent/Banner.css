@@ -1,0 +1,70 @@
+
+/** banner section **/
+
+.banner_main {
+    background: url(../../public/assets/images/banner.jpg);
+    padding: 97px 0px 0px 0px;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    min-height: 698px;
+}
+
+.blodark {
+    color: #183661;
+    font-family: 'Righteous', cursive;
+    font-size: 85px;
+}
+
+.text-bg {
+    text-align: left;
+}
+
+.ban_img {
+margin-right: -45px;
+position: absolute;
+/* background-size: 100% 100%; */
+/* background-color: #03cafc;*/
+height: 100%;
+width: 100%; 
+}
+
+.text-bg h1 {
+    color: #f2c119;
+    font-size: 116px;
+    line-height: 120px;
+    padding-bottom: 50px;
+    font-weight: 400;
+}
+
+.text-bg p {
+    color: #2a2a2c;
+    line-height: 30px;
+    font-size: 33px;
+    margin-bottom: 50px;
+}
+
+.text-bg .read_more {
+    font-weight: 500;
+    background: #1d37fd;
+    color: #fff !important;
+    border-radius: 43px;
+    margin-right: 25px;
+    padding: 13px 0;
+    max-width: 210px;
+}
+
+.text-bg .read_more:hover {
+    background: #fcc10e;
+    color: #000 !important;
+}
+
+.ban_img figure {
+    margin: 0;
+}
+
+.ban_img figure img {
+    width: 100%;
+}
+
+
+/** end banner section **/

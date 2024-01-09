@@ -3,55 +3,27 @@ import './Service.css';
 function Service()
 {
     return(
-        <div>
- {/* our plane */}
- <div class="plane">
- <div class="container">
-    <div class="row">
-       <div class="col-sm-12">
-          <div class="titlepage">
-             <h2>Our Plane</h2>
-             <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod t dolor in reprehenderit in voluptate </span>
-          </div>
-       </div>
-    </div>
-    <div class="row">
-       <div class="col-md-4">
-          <div class="plan_bax text_align_center">
-             <figure><img src="assets/images/b2.jpeg" alt="#"/></figure>
-             <div  id="ho_plan" class="plan_text">
-                <h3>LIGHT DECORATIONS</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod t dolor in reprehenderit in voluptate </p>
-                <a class="read_more" href="Javascript:void(0)">Read More</a>
-             </div>
-          </div>
-       </div>
-       <div class="col-md-4">
-          <div class="plan_bax text_align_center">
-             <figure><img src="assets/images/b3.jpeg" alt="#"/></figure>
-             <div  id="ho_plan" class="plan_text">
-                <h3>FLOWER RESTAURANT</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod t dolor in reprehenderit in voluptate </p>
-                <a class="read_more" href="Javascript:void(0)">Read More</a>
-             </div>
-          </div>
-       </div>
-       <div class="col-md-4">
-          <div class="plan_bax text_align_center">
-             <figure><img src="assets/images/plan_img1.jpg" alt="#"/></figure>
-             <div  id="ho_plan" class="plan_text">
-                <h3>SPACIAL PARTY</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod t dolor in reprehenderit in voluptate </p>
-                <a class="read_more" href="Javascript:void(0)">Read More</a>
-             </div>
-          </div>
-       </div>
-    </div>
- </div>
-</div>
-{/* our plane */}
-
-</div>
-    );
+        <div class="About">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1>Service Page</h1>
+                            <p>Officiis fugiat modi error rerum, 
+                                ex perferendis provident laboriosam ea minima numquam eveniet delectus impedit nemo assumenda. Blanditiis, velit similique? Itaque vel
+                                repudiandae consectetur illum veniam incidunt sed assumenda est nulla dolore magni, reiciendis magnam ullam, libero culpa dicta architecto
+                                nemo possimus pariatur quasi harum minima maxime omnis. Nulla commodi molestias cupiditate accusamus voluptates hic suscipit similique labore delectus,
+                                tempore alias dolorum eius maiores laborum ea, atque libero corrupti rerum dignissimos id velit doloremque ipsum exercitationem!
+                                Perspiciatis illo, quisquam iure culpa quibusdam voluptatibus atque eveniet molestiae sit consectetur nesciunt provident tempora 
+                                aspernatur harum odio adipisci officiis veniam minima. Eveniet quod fugiat sequi quo ducimus eaque amet explicabo neque deserunt a
+                                officia dignissimos temporibus soluta placeat maxime, ipsam, non laborum, modi veritatis! Voluptates hic odit mollitia alias, accusamus
+                                itaque odio maxime illum rem et eius laborum sint aliquid neque assumenda officia ipsam ipsum voluptatibus dolorem animi ut! 
+                            </p>                          
+                    </div>
+                </div>
+            </div>
+        </div>
+       );
 }
+
 export default Service;
+

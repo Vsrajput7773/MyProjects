@@ -1,9 +1,9 @@
-import { useState } from 'react';
-import './Register.css';
+import { useState , useEffect } from 'react';
+import './Epadmin.css';
 import  axios from 'axios';
 import { _userapiurl } from '../ApiUrl';
 
-function Register() {
+function Epadmin() {
     const [ output , setOutput ] = useState();
     const [ name , setName ] = useState();
     const [ email , setEmail ] = useState();
@@ -12,22 +12,32 @@ function Register() {
     const [ address , setAddress ] = useState();
     const [ city , setCity ] = useState();
     const [ gender , setGender ] = useState();
+    //const [ userDetails , setUserDetails ] = useState([]);
+    
+    useEffect(()=>{
+        var email = localStorage.getItem("email");
+        axios.get(_userapiurl+"fetch?email="+email).then((response)=>{
+            //setUserDetails(response.data);
+            //console.log(response.data[0]);
+            var adminDetails=response.data[0];
+            setName(adminDetails.name);
+            setEmail(adminDetails.email);
+            setPassword(adminDetails.password);
+            setAddress(adminDetails.address);
+            setCity(adminDetails.city);
+            setMobile(adminDetails.mobile);
+        }).catch((err)=>{
+            console.log(err);
+        });
+    },[]);
 
-    const handleSubmit=(ffo)=>{
-        ffo.preventDefault();
-        let userDetails={"name":name,"email":email,"password":password,"mobile":mobile,"address":address,"city":city,"gender":gender};
+
+    const handleSubmit=(evt)=>{
+        evt.preventDefault();
         //console.log(userDetails);
-        
-        axios.post(_userapiurl+"save",userDetails).then((response)=>{
-            // console.log(response);
-            setOutput(response.data.msg);
-            setName('');
-            setEmail('');
-            setPassword('');
-            setAddress('');
-            setCity('');
-            setMobile('');
-            // alert("It's Done....");
+        var updateDetails={"condition":{"email":email},"set":{"name":name,"email":email,"password":password,"mobile":mobile,"address":address,"city":city,"gender":gender}};
+        axios.patch(_userapiurl+"update",updateDetails).then((response)=>{
+            setOutput("Profile Edited Successfully....");
         }).catch((err)=>{
            console.log(err);
         });
@@ -37,7 +47,7 @@ function Register() {
         <div class="container" >
             <div class="row" >
                 <div class="col-md-12 col-lg-12" >
-                    <h2>Register Here!!!!</h2>
+                    <h2>Edit Profile Here!!!</h2>
                     <font style={{"color":"Green","font-size":"20px"}}>{output}</font>
                     <form onSubmit={handleSubmit} >
                         <div class="form-group">
@@ -72,7 +82,7 @@ function Register() {
                         <div class="form-group" >
                           <label class="gender" >Gender:</label>
                           &nbsp;&nbsp;
-                          Male <input type="radio" value="male" name="gender"
+                          Male <input checked type="radio" value="male" name="gender"
 onChange={e => setGender(e.target.value)} ></input>
                           &nbsp;&nbsp;
                           Female <input type="radio" value="female" name="gender"
@@ -88,4 +98,4 @@ onChange={e => setGender(e.target.value)} ></input>
     );
 }
 
-export default Register;
+export default Epadmin;
